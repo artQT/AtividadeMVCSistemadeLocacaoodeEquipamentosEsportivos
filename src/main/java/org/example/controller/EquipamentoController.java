@@ -10,9 +10,8 @@ public class EquipamentoController {
         if(nome.isBlank()){throw new RuntimeException("Erro: nome em branco");}
         if(nome.length()< 3){throw new RuntimeException("Erro: nome invalido");}
         if(tipo.isBlank()){throw new RuntimeException(("Erro: tipo em branco"));}
-        if(tipo.matches("[a-zA-Z ]+"))throw new RuntimeException("Erro:ipo invalido");}
+        if(tipo.matches("[a-zA-Z ]+"))throw new RuntimeException("Erro:ipo invalido");
 
-    equipamentoService.cadastrarEquipamento(nome, tipo);
-}
-
+        equipamentoService.cadastrarEquipamento(nome,tipo);
+    }
 }
