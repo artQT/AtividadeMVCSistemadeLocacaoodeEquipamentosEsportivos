@@ -2,7 +2,7 @@ package org.example.entity;
 
 public class Aluno {
 
-    private long id = 0;
+    private int id = 0;
     private String nome = null;
     private String matricula = null;
 
@@ -14,11 +14,11 @@ public class Aluno {
         this.matricula = matricula;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

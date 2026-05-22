@@ -13,7 +13,7 @@ public class AlunoController {
         if (matricula.isBlank()){throw new IllegalArgumentException("Erro: matricula em branco");}
         if (!matricula.matches("[a-zA-Z0-9]+")){throw new IllegalArgumentException("Erro: matricula invalidas");}
 
-        alunoService.cadastrarAluno(nome,matricula);
+        alunoService.cadastrarAluno(nome, matricula);
 
     }
 }
