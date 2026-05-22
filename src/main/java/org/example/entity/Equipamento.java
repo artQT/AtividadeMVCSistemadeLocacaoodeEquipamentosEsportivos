@@ -9,11 +9,11 @@ public class Equipamento {
 
     public static int idContador = 0;
 
-    public Equipamento(String nome, String tipo, boolean disponivel) {
+    public Equipamento(String nome, String tipo) {
         this.id = idContador++;
         this.nome = nome;
         this.tipo = tipo;
-        this.disponivel = disponivel;
+        this.disponivel = true;
     }
 
     public String getNome(){
