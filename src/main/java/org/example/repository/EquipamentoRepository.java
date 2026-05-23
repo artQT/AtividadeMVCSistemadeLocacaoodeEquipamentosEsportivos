@@ -13,7 +13,7 @@ public class EquipamentoRepository {
         equipamentos = new HashMap<>();
     }
 
-    public void IsertAluno(Equipamento equipamento){
+    public void InsertEquipamento(Equipamento equipamento){
         equipamentos.put(equipamento.getId(), equipamento);
     }
 

@@ -14,17 +14,16 @@ public class EquipamentoService {
     public void cadastrarEquipamento(String nome,String tipo) {
         try{
             if(validarEquipamento(new Equipamento(nome,tipo))) {
+                repository.InsertEquipamento(new Equipamento(nome,tipo));
             }else{
-
+                throw new RuntimeException("Erro: equipamento invalido");
             }
         } catch (RuntimeException e) {
-
+            System.out.println(e.getMessage());
         }
     }
 
     public boolean validarEquipamento(Equipamento equipamento){
-
-
         return true;
     }
 }
