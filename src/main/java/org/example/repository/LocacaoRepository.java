@@ -9,7 +9,7 @@ public class LocacaoRepository {
 
     Map<Integer, Locacao> locacaos = new HashMap<>();
 
-    public Map<Integer, Locacao> getLocacaos(){
+    public Map<Integer, Locacao> getLocacoes(){
         return locacaos;
     }
 

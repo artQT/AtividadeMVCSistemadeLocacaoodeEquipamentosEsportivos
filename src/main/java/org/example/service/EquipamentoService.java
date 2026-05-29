@@ -24,6 +24,7 @@ public class EquipamentoService {
     }
 
     public boolean validarEquipamento(Equipamento equipamento){
+
         return true;
     }
 }
