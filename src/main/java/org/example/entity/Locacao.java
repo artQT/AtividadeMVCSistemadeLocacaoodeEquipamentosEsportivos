@@ -6,16 +6,16 @@ public class Locacao {
     private Equipamento equipamento;
     private int id = 0;
     private String dataLocacao = null;
-    private String status = null;
+    private boolean finalizada = false;
 
     private static int idContador = 0;
 
-    public Locacao(Aluno aluno, Equipamento equipamento, String dataLocacao, String status) {
+    public Locacao(Aluno aluno, Equipamento equipamento, String dataLocacao, boolean finalizada) {
         this.id = idContador++;
         this.aluno = aluno;
         this.equipamento = equipamento;
         this.dataLocacao = dataLocacao;
-        this.status = status;
+        this.finalizada = finalizada;
     }
 
     public Equipamento getEquipamento() {
@@ -42,12 +42,12 @@ public class Locacao {
         this.dataLocacao = dataLocacao;
     }
 
-    public String getStatus() {
-        return status;
+    public boolean getFinalizada() {
+        return finalizada;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setFinalizada(boolean finalizada) {
+        this.finalizada = finalizada;
     }
 
     public Aluno getAluno() {

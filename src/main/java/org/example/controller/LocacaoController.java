@@ -8,28 +8,26 @@ public class LocacaoController {
 
     LocacaoService locacaoService = new LocacaoService();
 
-    public void realizarLocacao(Aluno aluno, Equipamento equipamento,String dataLocacao, String status){
+    public void realizarLocacao(Aluno aluno, Equipamento equipamento,String dataLocacao, boolean finalizada){
         if(aluno == null){throw new IllegalArgumentException("Erro: Aluno não encontrado ");}
         if(equipamento == null){throw new IllegalArgumentException("Erro: Equipamento não encontrado");}
         if(dataLocacao.isBlank()){throw new IllegalArgumentException("Erro: Data em branco");}
-        if(status.isBlank()){throw new IllegalArgumentException("Erro: Status em branco");}
 
-        locacaoService.realizarLocacao(id, aluno, equipamento, dataLocacao, status );
+        locacaoService.realizarLocacao(aluno, equipamento, dataLocacao, finalizada);
     }
 
     public void listarLocacao(){
         locacaoService.listarLocacao();
     }
 
-    public void atulizarLocacao( String dataLocacao, String status){
+    public void atulizarLocacao(int id,Aluno aluno, Equipamento equipamento, String dataLocacao){
 
         if(dataLocacao.isBlank()){throw new IllegalArgumentException("Erro: Data invalida");}
-        if(status.isBlank()){throw  new IllegalArgumentException("Erro: Status invalido");}
 
-        locacaoService.atulizarLocacao(dataLocacao, status);
+        locacaoService.atualizarLocacao(id, aluno, equipamento, dataLocacao);
     }
 
-    public void finalizarLocacao(long id){
+    public void finalizarLocacao(int id){
 
         if(id <= 0){throw new IllegalArgumentException("Erro: ID invalido");}
 
@@ -37,11 +35,9 @@ public class LocacaoController {
 
     }
 
-    public void removerLocacao(long id){
+    public void removerLocacao(int id){
         if(id <= 0){throw new IllegalArgumentException("Erro: ID invalido");}
 
         locacaoService.removerLocacao(id);
     }
-
-
 }
