@@ -1,7 +1,7 @@
 package org.example.controller;
 
 import org.example.entity.*;
-import org.example.service.LocacaoService;
+//varios erros aqui:
 
 public class LocacaoController {
 
