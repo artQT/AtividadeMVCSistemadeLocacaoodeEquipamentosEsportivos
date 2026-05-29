@@ -3,7 +3,6 @@ package org.example.view;
 import org.example.controller.LocacaoController; // não implementado ainda
 import org.example.entity.Locacao;
 
-import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 public class LocacaoView {
@@ -42,7 +41,7 @@ public class LocacaoView {
 
     public void menuListar(){
 
-        Locacao[] locacoes = LocacaoController.listarLocacoes;
+        Locacao[] locacoes = LocacaoController.listarLocacoes();
 
         System.out.println("\n====== Lista de Locações ======");
 

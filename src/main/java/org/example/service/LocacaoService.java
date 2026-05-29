@@ -27,14 +27,8 @@ public class LocacaoService {
         }
     }
 
-    public void listarLocacao(){
-        for (Map.Entry<Integer, Locacao> i : repository.getLocacoes().entrySet()){
-
-            Integer id = i.getKey();
-            Locacao locacao = i.getValue();
-
-            System.out.println("Id: "+id+" | "+locacao);
-        }
+    public Locacao[] listarLocacao(){
+        return repository.getLocacoes();
     }
 
     public void atualizarLocacao(int id, Aluno novoAluno, Equipamento novoEquipamento, String novaDataLocacao){
