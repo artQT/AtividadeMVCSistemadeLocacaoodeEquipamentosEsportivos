@@ -6,7 +6,7 @@ public class EquipamentoController {
 
     private EquipamentoService equipamentoService = new EquipamentoService();
 
-    public void cadastrarEqupamento(String nome, String tipo){
+    public void cadastrarEquipamento(String nome, String tipo){
 
         if(nome.isBlank()){
           throw new IllegalArgumentException("Erro: nome em branco");
