@@ -2,12 +2,12 @@ package org.example.controller;
 
 import org.example.entity.*;
 import org.example.service.LocacaoService;
-//varios erros aqui:
+import org.example.repository.*;
 
 public class LocacaoController {
 
 
-    LocacaoService locacaoService = new LocacaoService();
+    static LocacaoService locacaoService = new LocacaoService();
 
     public void cadastrarLocacao(Aluno aluno, Equipamento equipamento,String dataLocacao, boolean finalizada){
         if(aluno == null){throw new IllegalArgumentException("Erro: Aluno não encontrado ");}
@@ -17,13 +17,19 @@ public class LocacaoController {
         locacaoService.realizarLocacao(aluno, equipamento, dataLocacao, finalizada);
     }
 
-    public Locacao[] listarLocacoes(){
-        return locacaoService.listarLocacao();
+    public static Locacao[] listarLocacoes(){
+        return locacaoService.listarLocacoes();
     }
 
-    public void atualizarLocacao(int id,Aluno aluno, Equipamento equipamento, String dataLocacao){
+    public void atualizarLocacao(int id,String nome_aluno, String nome_equipamento, String dataLocacao){
 
         if(dataLocacao.isBlank()){throw new IllegalArgumentException("Erro: Data invalida");}
+
+        AlunoRepository alunoRepo = new AlunoRepository();
+        EquipamentoRepository equipRepo = new EquipamentoRepository();
+
+        Aluno aluno = alunoRepo.getAlunoByName(nome_aluno);
+        Equipamento equipamento = equipRepo.getEquipamentoByName(nome_equipamento);
 
         locacaoService.atualizarLocacao(id, aluno, equipamento, dataLocacao);
     }
