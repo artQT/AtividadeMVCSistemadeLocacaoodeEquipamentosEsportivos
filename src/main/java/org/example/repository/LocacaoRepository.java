@@ -9,8 +9,8 @@ public class LocacaoRepository {
 
     Map<Integer, Locacao> locacaos = new HashMap<>();
 
-    public Map<Integer, Locacao> getLocacoes(){
-        return locacaos;
+    public Locacao[] getLocacoes(){
+        return locacaos.values().toArray(new Locacao[0]);
     }
 
     public void insertLocaocao(Locacao locacao){
