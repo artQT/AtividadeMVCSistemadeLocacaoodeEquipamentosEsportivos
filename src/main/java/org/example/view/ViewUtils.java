@@ -1,6 +1,5 @@
 package org.example.view;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class ViewUtils {

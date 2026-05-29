@@ -1,7 +1,6 @@
 package org.example.view;
 
 import org.example.controller.EquipamentoController;
-import org.example.entity.Equipamento;
 
 import java.util.Scanner;
 
@@ -16,7 +15,7 @@ public class EquipamentoView {
     }
 
     public void menuCadastro(){
-        System.out.println("====== Menu de Cadastro de Equipamento ======");
+        System.out.println("\n====== Menu de Cadastro de Equipamento ======");
         System.out.println();
 
         System.out.print("Insira o Nome do Equipamento: ");

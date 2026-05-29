@@ -16,7 +16,7 @@ public class AlunoView {
     }
 
     public void menuCadastro(){
-        System.out.println("====== Menu de Cadastro de Aluno ======");
+        System.out.println("\n====== Menu de Cadastro de Aluno ======");
         System.out.println();
 
         System.out.print("Insira o Nome do Aluno: ");
