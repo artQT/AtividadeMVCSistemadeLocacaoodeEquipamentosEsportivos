@@ -11,7 +11,7 @@ public class MainView {
     private static final LocacaoView locacaoView = new LocacaoView();
 
 
-    public static void main(String[] args) {
+    public static void mainView() {
         int opcao;
 
         do {

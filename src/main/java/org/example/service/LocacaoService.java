@@ -5,11 +5,9 @@ import org.example.entity.Equipamento;
 import org.example.entity.Locacao;
 import org.example.repository.LocacaoRepository;
 
-import java.util.Map;
-
 public class LocacaoService {
 
-    LocacaoRepository repository = new LocacaoRepository();
+    LocacaoRepository repository;
 
     public LocacaoService() {
         repository = new LocacaoRepository();
@@ -27,8 +25,8 @@ public class LocacaoService {
         }
     }
 
-    public Locacao[] listarLocacao(){
-        return repository.getLocacoes();
+    public Locacao[] listarLocacoes(){
+        return repository.getLocacoesList();
     }
 
     public void atualizarLocacao(int id, Aluno novoAluno, Equipamento novoEquipamento, String novaDataLocacao){
@@ -49,7 +47,7 @@ public class LocacaoService {
 
 
     public boolean validarRealizarLocacao(Equipamento equipamento) {
-        if (!equipamento.getDisponivel() == false) return false;
+        if (!!equipamento.getDisponivel()) return false;
 
         equipamento.setDisponivel(false);
         return true;

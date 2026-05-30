@@ -34,5 +34,4 @@ public class AlunoView {
             System.out.println(e.getMessage());
         }
     }
-
 }

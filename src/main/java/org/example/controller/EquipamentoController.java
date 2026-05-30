@@ -17,7 +17,7 @@ public class EquipamentoController {
         if(tipo.isBlank()){
           throw new IllegalArgumentException(("Erro: tipo em branco"));
         }
-        if(tipo.matches("[a-zA-Z ]+")){
+        if(!tipo.matches("[a-zA-Z ]+")){
           throw new IllegalArgumentException("Erro:ipo invalido");
         }
     equipamentoService.cadastrarEquipamento(nome, tipo);
