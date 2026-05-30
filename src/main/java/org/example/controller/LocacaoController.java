@@ -7,14 +7,26 @@ import org.example.repository.*;
 public class LocacaoController {
 
 
-    static LocacaoService locacaoService = new LocacaoService();
+    static LocacaoService locacaoService;
+    private AlunoRepository alunoRepo;
+    private EquipamentoRepository equipRepo;
 
-    public void cadastrarLocacao(Aluno aluno, Equipamento equipamento,String dataLocacao, boolean finalizada){
+    public LocacaoController(){
+        this.locacaoService = new LocacaoService();
+        this.alunoRepo = new AlunoRepository();
+        this.equipRepo = new EquipamentoRepository();
+    }
+
+    public void cadastrarLocacao(String nome_aluno, String nome_equipamento,String dataLocacao){
+
+        Aluno aluno = alunoRepo.getAlunoByName(nome_aluno);
+        Equipamento equipamento = equipRepo.getEquipamentoByName(nome_equipamento);
+
         if(aluno == null){throw new IllegalArgumentException("Erro: Aluno não encontrado ");}
         if(equipamento == null){throw new IllegalArgumentException("Erro: Equipamento não encontrado");}
         if(dataLocacao.isBlank()){throw new IllegalArgumentException("Erro: Data em branco");}
 
-        locacaoService.realizarLocacao(aluno, equipamento, dataLocacao, finalizada);
+        locacaoService.realizarLocacao(aluno, equipamento, dataLocacao, false);
     }
 
     public static Locacao[] listarLocacoes(){
